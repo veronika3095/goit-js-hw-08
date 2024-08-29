@@ -11,14 +11,14 @@ body {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 156px;
+    padding: 12px 155px;
     margin: 0 ;
     
 }
 
 .gallery-item {
     margin: 0;
-   padding: 0 ;
+   padding: 12px;
     width: calc((100% - 47px) / 3);
     
 }
