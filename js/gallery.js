@@ -1,7 +1,7 @@
 const images = [
   {
     preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__340.jpg',
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
     original:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
     description: 'Hokkaido Flower',
@@ -88,6 +88,7 @@ function createGalleryMarkup(images) {
 
 gallery.innerHTML = createGalleryMarkup(images);
 
+
 gallery.addEventListener('click', (event) => {
   event.preventDefault();
   
@@ -120,3 +121,14 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+ if (event.target.nodeName === 'IMG') {
+    const originalSrc = event.target.dataset.source;
+    
+    
+    const instance = basicLightbox.create(`
+      <img src="${originalSrc}" width="800" height="auto">
+    `);
+    
+    instance.show();
+  }
